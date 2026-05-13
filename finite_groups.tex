@@ -1,0 +1,59 @@
+\section{Unipotent representations for finite groups of Lie type}\label{sec:finite_groups}
+Despite the fact that the statement of Conjecture \ref{conj:main} is at heart a result about the representation theory of a $p$-adic group $G$, in this first section we briefly recall important representation theoretic properties of finite groups of Lie type leading to the Lusztig's construction of the nonabelian fourier transform described in the introduction. Suppose $\mathbb{G}$ is a connected reductive group over $\overline{\FF_p}$ with Frobenius map $\Fr:\mathbb{G}\rightarrow\mathbb{G}$. The group $\GFr$ is a finite group inheriting many structural properties of $\mathbb{G}$. An easy application of the Lang--Steinberg theorem \cite{Carter1985}*{\S1.17} gives the existence of $\Fr$-stable Borel subgroups of $\mathbb{G}$, and each $\Fr$-stable Borel contains an $\Fr$-stable maximal torus of $\mathbb{G}$. While all $\Fr$-stable Borel subgroups of $\mathbb{G}$ are conjugate under $\GFr$, this is not the case for $\Fr$-stable maximal tori. The $\GFr$-conjugacy classes of $\Fr$-stable maximal tori are classified by the $\Fr$-conjugacy classes of the Weyl group $W:=N_{\mathbb{G}}(\mathbb{T})/\mathbb{T}$, where $\mathbb{T}$ is any $\Fr$-stable maximal tori of $\mathbb{G}$. 
+
+The Frobenius map $\Fr$ induces an action $\sigma$ on the Dynkin diagram by $\Fr(\mathcal{X}_\alpha)=\mathcal{X}_{\sigma(\alpha)}$, where the simple roots are chosen appropriately. When this action $\sigma$ is trivial, we say that $\GFr$ is split, in which case the $\GFr$-conjugacy classes of $\Fr$-maximal tori are classified by the $W$-conjugacy classes. All finite groups of Lie type considered in this paper are split, so we assume hereafter that $\Fr$ induces the trivial automorphism of the Dynkin diagram. In this case, conjugacy classes of the Weyl groups parametrize classes of $\Fr$-stable tori. Given $w\in W$, we denote by $\mathbb{T}_w\subseteq\mathbb{G}$ an $\Fr$-maximal torus in $\GFr$-conjugacy class parametrized by $w$. For example, the class of $\mathbb{T}_e$ contains all $\Fr$-stable maximal tori contained in $\Fr$-stable Borel subgroups. Deligne and Lusztig's groundbreaking work associates, to each $\Fr$-maximal torus $\mathbb{T}$ and character $\theta:\TFr\rightarrow\CC^\times$ a virtual character $R_{T,\theta}$ of the group $\GFr$ with striking properties. This construction is widely known as \textit{Deligne--Lusztig induction}. The original paper of Deligne and Lusztig \cite{DeligneLusztig1976} or Carter's book \cite{Carter1985}*{\S7} are great references that discuss in detail many of these properties.
+
+Using the virtual characters $R_{\mathbb{T},\theta}$, Deligne and Lusztig defined a representation $\rho\in\Irr(\GFr)$ to be \textit{unipotent} if $\langle R_{\mathbb{T},1},\rho\rangle\neq 0$ for some $\Fr$-stable maximal torus $\mathbb{F}$ of $\mathbb{G}$. In particular, this implies that $\rho$ arises as a representation of $\GFr$ from an $\ell$-adic cohomology space of some Deligne--Lusztig variety. We remark that $R_{T_e,1}=\Ind_{\mathbb{B}^\mathrm{\Fr}}^{\GFr}1$, so unipotent representations naturally extend principal series representations. In addition, unipotent representations naturally factor through the centre of $\GFr$, so one normally assumes without loss of generality that $\mathbb{G}$ is of adjoint type. We denote the set of unipotent characters by $\Irr_{\un}(\GFr)$.
+
+The irreducible characters $\phi$ of $W$ are known to parametrize principal series representations $\chi_\phi$ of $\GFr$. Lusztig considered in addition the virtual character 
+$$R_\phi:=\frac{1}{|W|}\sum_{w\in W}\phi(w)R_{\mathbb{T}_w,1}$$
+which he called an \textit{almost character} of $\GFr$. These characters arise as traces of character sheaves of $\mathbb{G}$ and thus have nice geometric stability properties. These characters are a natural orthonormal basis of $R_{\un}(\GFr)$, the complexification of the Grothendieck space spanned by the unipotent characters of $\mathbb{G}$. The above construction gives a canonical map
+\begin{equation*}
+    \{\text{principal series reps}\}\longrightarrow\{\text{almost characters}\},\quad\quad\chi_\phi\longmapsto R_\phi.
+\end{equation*} 
+Lusztig realized that it was possible to naturally extend the above map for all unipotent representations obtaining an involution on $\FT^{\mathbb{G}}$. To achieve this, first we group unipotent representations into families by stating that two representations $\rho_1,\rho_2$ are in the same family if 
+$$\langle\rho_1,R_\phi\rangle\neq0\quad\text{and}\quad\langle\rho_2,R_\phi\rangle\neq0\quad\text{for some }\phi\in\Irr(W),$$
+and then extending by transitivity. To each family $\mathcal{U}\subset\Irr_{\un}(\GFr)$, Lusztig associated a finite group $\Gamma_\mathcal{U}$, scalars $\Delta(x,\sigma)\in\{\pm1\}, (x,\sigma)\in\mathcal{M}(\Gamma_\mathcal{U})$ defined in \cite{Lusztig1984} and a bijection
+\begin{align*}
+    \mathcal{U}&\longleftrightarrow\mathcal{M}(\Gamma_\mathcal{U}):=\{(x,\sigma)\ |\ x\in\Gamma_\mathcal{U},\sigma\in\Irr(Z_{\Gamma_{\mathcal{U}}}(x))\}/\Gamma_\mathcal{U}\\
+    \rho_{(x,\sigma)}&\longleftrightarrow(x,\sigma).
+\end{align*}
+The indexing set $\mathcal{M}(\Gamma_\mathcal{U})$ carries a natural pairing 
+$$\left\{(x,\sigma),(y,\tau)\right\}=\frac{1}{|Z_{\Gamma_\mathcal{U}}(x)||Z_{\Gamma_\mathcal{U}}(y)|}\sum_{\substack{g\in\Gamma_{\mathcal{U}}\\xgyg^{-1}=gygx^{-1}}}\sigma(gyg^{-1})\tau(g^{-1}x^{-1}g),$$
+and the above bijection satisfies the property that 
+\begin{equation}\label{eqn:inner_product}
+    \langle\rho_{(x,\rho)},R_\phi\rangle_{\GFr}=\begin{cases}
+        \Delta(x,\sigma)\left\{(x,\rho),(y,\tau)\right\}&\text{ if }\chi_\phi=\rho_{(y,\tau)}\in\mathcal{U},\\
+        0 & \text{ if }\chi_\phi\not\in\mathcal{U}.
+    \end{cases}
+\end{equation}
+We recall that if $W$ is an irreducible Weyl group, then $\Delta(x,\rho)=1$ except for the families containing $\phi_{512,11}$ in $E_7$, $\phi_{4096,11}$ or $\phi_{4096,26}$ in $E_8$. For any family $\mathcal{U}$, $\rho_{(e,1)}=\chi_\phi$ is a principal series representation corresponding to some representation $\phi$ of $W$. Such representations of $W$ are called \textit{special}, and they are the only ones satisfying the property that $\langle\chi,R_\phi\rangle\geq0$ for all unipotent characters $\chi$ (see \cite{Carter1985}*{\S12.3}). We define the \textit{unipotent almost characters} of $\GFr$ to be the set of orthonormal class functions
+$$R_{(x,\sigma)}:=\sum_{(y,\tau)}\Delta(y,\tau)\{(y,\tau),(x,\sigma)\}\rho_{(y,\tau)},\quad(x,\sigma)\in\mathcal{M}(\Gamma_\mathcal{U}).$$
+In particular, if $\chi_\phi=\rho_{(x,\rho)}$, then $R_\phi=R_{(x,\rho)}$. Lusztig also defined the map 
+\begin{align*}
+    \FT_{\Gamma_\mathcal{U}}:\CC[\mathcal{U}]&\longrightarrow\CC[\mathcal{U}]\\
+    \rho_{(x,\sigma)}&\longmapsto\sum_{(y,\tau)\in\mathcal{M}(\Gamma_\mathcal{U})}\{(x,\sigma),(y,\tau)\}\rho_{(y,\tau)}
+\end{align*}
+The \textit{unipotent nonabelian Fourier transform} of $\GFr$ on the space $R_{\un}(\GFr)=\oplus_{\mathcal{U}\subseteq\Irr_{\un}(\GFr)}\CC[\mathcal{U}]$ is the map
+$$\FT^{\GFr}:=\bigoplus_{\mathcal{U}\subset\Irr_{\un}(\GFr)}\FT_{\Gamma_\mathcal{U}},$$
+satisfying many properties. Most importantly, it is a self-Hermitian involution with respect to the standard inner product of characters satisfying $\FT^{\GFr}(\chi_\phi)=R_\phi$; that is, it takes unipotent representations to the almost characters arising as traces of character sheaves on $\mathbb{G}$.
+
+When $\GFr$ is split (as it is the case throughout this document) it is convenient to express Lusztig's nonabelian Fourier transform in term of stable combinations of unipotent representations. This makes the verification of Conjecture \ref{conj:main} cleaner and more straightforward. Let $\mathcal{U}$ be a family of unipotent representations and for each $x\in\Gamma_\mathcal{U}$, define the virtual combinations of unipotent characters
+\begin{equation}\label{eqn:virtual1}
+    \Pi_\mathcal{U}(x,y)=\sum_{\sigma\in\widehat{Z_{\Gamma_\mathcal{U}}(x)}}\sigma(y^{-1})\rho_{(x,\sigma)},\quad\text{where } y\in Z_{\Gamma_\mathcal{U}}(x).
+\end{equation}
+Dually, when $\Gamma_\mathcal{U}$ is abelian, define the virtual combinations
+\begin{equation}\label{eqn:virtual2}
+    \Pi_\mathcal{U}(\sigma,\tau)=\sum_{y\in\Gamma_\mathcal{U}}\tau(y)\rho_{(y,\sigma)},\quad\text{if } \sigma,\tau\in \widehat{\Gamma_\mathcal{U}}.
+\end{equation}
+
+
+\begin{lemma}[\cite{AubertCiubotaruRomano2024}*{Lemma 5.1}]
+    With the notation of \eqref{eqn:virtual1} and \eqref{eqn:virtual2}, 
+    \begin{equation*}
+        \FT_{\Gamma_\mathcal{U}}(\Pi_\mathcal{U}(x,y))=\Delta(x,y)\Pi_{\mathcal{U}}(y,x),\quad \FT_{\Gamma_\mathcal{U}}(\Pi_\mathcal{U}(\sigma,\tau))=\Pi_{\mathcal{U}}(\tau,\sigma),
+    \end{equation*}
+    the latter when $\Gamma_\mathcal{U}$ is abelian, where $\Delta(x,y)=1$ unless $\mathcal{U}$ is one of the families described in \eqref{eqn:inner_product}, in which case $\Delta(1,g_2)=\Delta(g_2,1)=-1$ and $1$ otherwise.
+\end{lemma}
+
+\newpage

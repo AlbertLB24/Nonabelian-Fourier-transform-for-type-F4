@@ -1,0 +1,125 @@
+\section{Unipotent representations of p-adic groups} \label{sec:padic_groups}
+In this section, we bridge the gap between the representation theory of finite groups of Lie type and that of $p$-adic groups briefly discussed during the introduction. We preserve the same setting: throughout, we let $G$ be a connected simple group defined over a finite extension $F$ of $\QQ_p$ with residue field $\FF_q$. We further assume that $G$ is split with split maximal torus $T$ and of simply connected type. In particular, $G$ is determined by the $p$-adic field $F$ and the type of the root system $\Phi$ of $G$. Let $\Irr(G)$ be the set of irreducible smooth representations of $G$ and $\Irr_{\un}(G)\subseteq\Irr(G)$ the subset of unipotent representations. We now describe Lusztig's characterization of unipotent representations of $G$ in terms of the topology $G$ and the representation theory of finite groups of Lie type.
+
+We associate the Bruhat--Tits building $\mathcal{B}(G)$ to the group $G$, a simplicial complex whose dimension agrees with the rank of $G$ and carrying an action of $G$ by simplicial transformations. To each facet $c$ in the building of $G$, consider the \textit{parahoric subgroup} $K_c:=\Stab_G(c)$. When $G$ is simply connected, $K_c$ is a connected open compact subgroup of $G$ fitting in an exact sequence
+$$1\longrightarrow U_c\longrightarrow K_c\longrightarrow \overline{K}_c\longrightarrow 1,$$
+where $U_c$ is the pro-unipotent radical of $K_c$ and $\overline{K}_c$ is the group of $\FF_q$-rational points of a connected reductive group $\mathbf{\overline{K}_c}$. Since $K_{g\cdot c}=gK_cg^{-1}$ for all facets $c$ $g\in G$, conjugacy classes of parahoric subgroups are in bijection with $G$-orbits of facets in $\mathcal{B}(G)$. Furthermore, we recall that after fixing a set of simple affine roots $S_{\aff}$ of $G$ with corresponding fundamental alcove $\mathcal{C}_0$, there is a bijection
+\begin{align*}
+    \{\text{Subsets }J\subsetneq S_{\aff}\}&\longleftrightarrow\{G\text{- orbits of facets in }\mathcal{B}(G)\}\\
+    J&\longmapsto c_J=\{x\in\overline{\mathcal{C}_0}\ |\ \langle\alpha,x\rangle\in\ZZ\iff\alpha\in J,\text{ for any }\alpha\in S_{\aff}\}
+\end{align*}
+satisfying that $J_1\subseteq J_2$ if and only if $c_{J_2}\subset \overline{c_{J_1}}$. Throughout, we denote by $(K_J,U_J,\overline{K}_J)$ the parahoric subgroup corresponding to the facet $c_J$. In particular, maximal parahoric subgroups corresponds to facets of minimal dimension and maximal subsets $J\subsetneq S_{\aff}$. When $G$ is simply connected, we recall that the set of maximal parahoric subgroups coincides with the set of maximal open compact groups. We define $$\max(G):=\{K_x\ |\ \{x\}\subset\mathcal{B}(G)\text{ facet of minimal dimenson}\}$$
+to be the set containing each orbit of maximal parahoric subgroups.
+
+Next, let $(\pi,V)$ a smooth admissible complex representation of $G$ and let $(K,U,\overline{K})$ be a parahoric subgroup. The space $V^{U_K}$ of fixed points under the pro-unipotent radical is naturally a representation of $\overline{K}=K/U_K$. This induces the \textit{parahoric restriction functor}
+\begin{equation}\label{eqn:par_restriction}
+    \res_K:R(G)\longrightarrow R(\overline{K}),\quad V\longmapsto V^{U_K},\quad\text{for all }V\in\Irr(G),
+\end{equation}
+where $R(G)$ and $R(\overline{K})$ are the complexification of the Grothendieck group of $\Irr(G)$ and $\Irr(\overline{K})$. If $(\sigma,E)$ is a cuspidal representation of $\overline{K}$, we define
+$$\Irr(G,K,E)=\{(\pi,V)\in\Irr(G)\ |\ \text{ the }\overline{K}\text{-module contains the }\overline{K}\text{-module }E\}.$$
+\begin{definition}
+    We say that an irreducible representation $(\pi,V)$ of $G$ is \textit{unipotent} if there is a parahoric subgroup $(K,U_K,\overline{K})$ such that $V^{U_K}$ contains a cuspidal unipotent representation of $\overline{K}$; that is, if $(\pi,V)\in\Irr(G,K,E)$ for some pair $(K,E)$ where $E$ is unipotent.
+\end{definition}
+Therefore, the set of unipotent representations up to isomorphism is
+$$\Irr_{\un}(G)=\bigcup_{\substack{J\subsetneq S_{\aff}\\ E \text{ cusp. unip. $\overline{K}_J$-rep}}}\Irr(G,K_J,E).$$
+Each set $\Irr(G,K,E)$ generates a distinct Bernstein \textit{block} of representations of $G$. If $\mathcal{I}$ is an Iwahori subgroup, $\mathcal{I}/U_\mathcal{I}\cong\FF_q^\times$ and the only unipotent is the trivial character. Thus, Iwahori-spherical representations are all unipotent. Moreover, unipotent representations behave well under the parahoric restriction functors $\res^K$. 
+\iffalse The following can be verified by a standard Harish--Chandra style argument. 
+\begin{proposition}\label{prop:unipotent_padic}
+    Let $(\pi,V)$ be an irreducible admissible representation of $G$. If there is some parahoric subgroup $(K,U_K,\overline{K})$ such that $V^{U_K}$ contains a (potentially non-cuspidal) unipotent representation of $\overline{K}$, then $(\pi,V)$ is a unipotent representation of $G$.
+\end{proposition}\fi
+The first important result is due to Moy and Prasad. A similar result holds for non-unipotent representations, but it is more complicated. 
+\begin{proposition}\label{thm:unip_restriction}\cite{Reeder2000}*{Lemma 5.1}
+    Assume $G$ is simply connected. Suppose $I\subsetneq S_{\aff}$ and that $V^{U_I}$ contains a cuspidal unipotent representation $\sigma$ of $\overline{K}_I$. If $J\subsetneq S_{\aff}$ with $V^{U_J}\neq 0$, and $J$ is minimal with respect to this property $I=J$.
+\end{proposition}
+The following is a direct consequence of the above result.
+\begin{cor}
+    For any two pairs $(K,E)$ and $(K',E')$ of a parahoric subgroup and a cuspidal unipotent representation of the reductive quotient, $\Irr(G,K,E)$ and $\Irr(G,K',E')$ are either disjoint or equal.
+\end{cor}
+Proposition \ref{thm:unip_restriction} together with a standard Harish--Chandra style argument yields the following corollary.
+\begin{cor}
+    Let $(\pi,V)$ be a unipotent representation of $G$ and let $(K,U_K,\overline{K})$ be a parahoric subgroup. Then the $\overline{K}$-irreducible components of $V^{U_K}$ are all unipotent.
+\end{cor}
+
+Consequently, for any parahoric subgroup $K$, the parahoric restriction functor $\res^K$ naturally restricts to the \textit{unipotent parahoric restriction function}
+\begin{equation*}
+    \res^K_{\un}:R_{\un}(G)\longrightarrow R_{\un}(\overline{K}),\quad V\longmapsto V^{U_K},
+\end{equation*}
+where $R_{\un}(G)$ and $R_{\un}(\overline{K})$ are the complexification of the Grothendieck groups spanned by $\Irr_{\un}(G)$ and $\Irr_{\un}(\overline{K})$, respectively. Finally, we let
+$$\res^{\cpt}_{\un}:=\bigoplus_{K\in\max(G)}\res^K_{\un}:R_{\un}(G)\longrightarrow \bigoplus_{K\in\max(G)}R_{\un}(\overline{K}).$$
+
+\subsection{The Langlands classification and the dual nonabelian Fourier transform}
+
+The Local Langlands provides a beautiful classification of the unipotent representations of $G$ in terms of the geometry of the dual group $G^\vee$ of $G$, of adjoint type. This result is widely known as Lusztig's arithmetic-geometric correspondence.
+\begin{theorem}[The arithmetic-geometric correspondence \cite{Lusztig1995}] There is a natural bijection between
+    \begin{align*}
+        G^\vee\backslash\{(x,\phi)\ |\ x\in G^\vee,\phi\in\widehat{A_x}\}&\longleftrightarrow \Irr_{\un}(G)\\
+        (x,\phi)&\longmapsto (\pi_{(x,\phi)},V_{(x,\phi)}).
+    \end{align*}
+    In particular, there is an isomorphism
+    \begin{equation}\label{eqn:arithmetic-geometric}
+        \LLC_{\un}:\bigoplus_{x\in G^\vee}R(A_x)\longrightarrow R_{\un}(G),
+    \end{equation}
+    where the sum on the left hand side is taken over conjugacy classes of $G^\vee$ and $R(A_x)$ is the space of virtual characters of $A_x$.
+\end{theorem}
+Given a Langlands parameter $(x,\phi)$, it is a natural question to ask inside which unipotent block does the representation $(\pi_{(x,\phi)},V_{(x,\phi)})$ lies inside of. This is the content of the generalized Springer correspondence, which we will not revise in detail here (see \cite{CiubotaruMasonBrownOkada2025}*{\S4.3}) Instead, we will state a fundamental result giving a geometric characterization for Iwahori-spherical representations in terms of the data $(x,\phi)$. These representations lie in the \textit{principal block}, generated by $\Irr(G,\mathcal{I},\mathbf{1})$. For the other representations that are not Iwahori-spherical, we will use Reeder's computations in \cite{Reeder2000}*{\S 10,11}. To state this result, we note that given the data $(x,\phi)$, one can consider the partial flag variety $\mathcal{B}^x$ containing all Borel subgroups of $G^\vee$. This variety carries a natural action of $A_x$ given by conjugation. In particular, the cohomology complex $H^*(\mathcal{B}^x)$ inherits an action of $A_x$ too.
+\begin{theorem}\cite{KazhdanLusztig1987}*{Theorem 7.12}
+    The representation $(\pi_{(x,\phi)},V_{(x,\phi)})$ is Iwahori-spherical if and only if $H^*(\mathcal{B}^x)^\phi\neq 0$. In particular, for any $x\in G^\vee$, the representation $(\pi_{(x,\mathbf{1})},V_{(x,\mathbf{1})})$ is Iwahori-spherical.
+\end{theorem}
+
+In this section we also define the dual nonabelian Fourier transform for unipotent representations of $p$-adic groups. Conjecturally, we expect the existence of a map $\FT^\vee$, a dual nonabelian Fourier transform, on the unipotent representation space $R_{\un}(G)$ with analogous properties to Lusztig's nonabelian Fourier transforms $\FT^{\overline{K}}$ and compatible with the unipotent parahoric restriction maps $\res_{\un}^K$. However, such a map has not been constructed in the literature in general on the infinite dimensional space $R_{\un}(G)$. For some applications, it is enough to construct it on the elliptic unipotent representation space $R_{\un,\mathrm{ell}}(G)$, a finite dimensional subspace of $R_{\un}(G)$ which we now describe. 
+
+Classically, the elliptic unipotent representation space $\overline{R}_{\un}(G)$ is defined as the quotient of $R_{\un}(G)$ by the subspace spanned bya ll properly parabolically induced representations. Equivalently, $\overline{R}_{\un}(G)$ is obtained by computing the quotient of $R_{\un}(G)$ by the radical of the Euler--Poincare pairing
+\begin{equation*}
+    EP_G(\ ,\ ):R_{\un}(G)\times R_{\un}(G)\longrightarrow\CC,\quad (V,V')\longmapsto\sum_{i\geq0}(-1)^i\Ext^i(V,V'),\text{ where }V,V'\in\Irr_{\un}(G),
+\end{equation*}
+and $EP_G(\ ,\ )$ is obtained by linearity, and where $\Ext^i(V,V')$ are calculated in the category of smooth complex $G$-representations. Thus, the space $R_{\un}(G)$ carries a natural non-degenerate pairing $EP_G(\ ,\ )$. Similarly, for each $x\in G^\vee$ the space of virtual representations $R(A_x)$ carries a natural elliptic pairing $(\ ,\ )^{A_x}_{\mathrm{ell}}$ (see \cite{AubertCiubotaruRomano2024}*{\S8.1} for the definition), and $\overline{R}(A_x)$ is the quotient of $R(A_x)$ by the radical of the elliptic pairing. The arithmetic-geometric \eqref{eqn:arithmetic-geometric} induces an isometric isomorphism on the elliptic representation spaces
+\begin{equation}\label{eqn:LLC_unipotent_elliptic}
+    \overline{\LLC}_{\un}:\bigoplus_{x\in G^\vee}\overline{R}(A_x)\longrightarrow\overline{R}_{\un}(G),
+\end{equation}
+where the sum on the left is again over conjugacy classes of elements in $G^\vee$. The left hand side of \eqref{eqn:LLC_unipotent_elliptic} can be further decomposed into
+$$\bigoplus_{x\in G^\vee}\overline{R}(A_x)=\bigoplus_{\substack{u\in G^\vee\\\mathrm{unipotent}}}\ \bigoplus_{\substack{s\in Z_{G^\vee}(u)\\\mathrm{semisimple}}}\overline{R}(A_{su}).$$
+Next, fix some unipotent element $u\in G^\vee$ and let $\Gamma_u$ be the reductive part of the centralizer $Z_{G^\vee}(u)$. We define the set of elliptic pairs associated to $u$ to be
+$$\mathcal{Y}(\Gamma_u)_{\mathrm{ell}}=\{(s,h)\in\Gamma_u\times\Gamma_u\ |\ s,h\text{ semisimple, }sh=hs, Z_{\Gamma_u}(s,h)\text{ is finite}\}.$$
+It is not hard to show that this set is always finite (see \cite{AubertCiubotaruRomano2024}*{Lemma 8.1}). For every $(s,h)\in\mathcal{Y}(\Gamma_u)$, define 
+\begin{equation}\label{eqn:virtual_ellipticpair}
+    \Pi(s,h)=\sum_{\phi\in\widehat{A_{\Gamma_u}(s)}}\phi(\overline{h})\phi\in R(A_{\Gamma_u}(s)),
+\end{equation}
+where $\overline{h}$ is the image of $h$ in $A_{\Gamma_u}(s)$. Moreover, let $\overline{\Pi}(s,h)$ denote the image in $\overline{R}(A_{\Gamma_u}(s))$ and let $\CC[\mathcal{Y}(\Gamma_u)_{\mathrm{ell}}]^{\Gamma_u}\cong\CC[\Gamma_u\backslash\mathcal{Y}(\Gamma_u)_{\mathrm{ell}}]$ be the space of $\Gamma_u$-invariant functions $\mathcal{Y}(\Gamma_u)$. Let $\mathbf{1}_{[(s,h)]}$ be the indicator function of the $\Gamma_u$-orbit of $(s,h)$. 
+\begin{proposition}\label{prop:elliptic_pairs}\cite{AubertCiubotaruRomano2024}*{Proposition 8.3} Let $u\in G^\vee$ be unipotent. Then the correspondence $\mathbf{1}_{[(s,h)]}\mapsto\overline{\Pi}(s,h)$ induces an isomorphism
+    $$\CC[\mathcal{Y}(\Gamma_u)_{\mathrm{ell}}]^{\Gamma_u}\longrightarrow\bigoplus_{\substack{s\in Z_{G^\vee}(u)\\\mathrm{semisimple}}}\overline{R}(A_{su})$$
+\end{proposition}
+Finally, for each $[(s,h)]\in\Gamma_u\backslash\mathcal{Y}(\Gamma_u)_{\mathrm{ell}}$, define the virtual combinations
+\begin{equation}
+    \Pi(u,s,h):=\sum_{\phi\in\widehat{A_{\Gamma_u}(s)}}\phi(h)\pi(su,\phi)\in R_{\un}(G),
+\end{equation}
+and let $\overline{\Pi}(u,s,h)$ be the corresponding images in $\overline{R}_{\un}(G)$.
+\begin{definition}
+    The elliptic unipotent representation space $R_{\un,\mathrm{ell}}(G)$ is the finite-dimensional subspace of $R_{\un}(G)$ spanned by virtual characters 
+    $\{\Pi(u,s,h)\ |\ u\text{ unipotent, and }(s,h)\in\mathcal{Y}(\Gamma_u)_{\mathrm{ell}}\}.$
+\end{definition}
+Thus, the isomorphism \eqref{eqn:LLC_unipotent_elliptic} together with Proposition \ref{prop:elliptic_pairs} yields an isometric isomorphism
+\begin{equation}
+    R_{\un,\mathrm{ell}}(G)\longrightarrow\overline{R}_{\un}(G),\quad\Pi(u,s,h)\mapsto\overline{\Pi}(u,s,h)
+\end{equation}
+The set $\Gamma_u\backslash\mathcal{Y}(\Gamma_u)_{\mathrm{ell}}$ admits an obvious involution given by $\mathrm{flip}:(s,h)\mapsto(h,s)$, which induces an involution on $R_{\un,\mathrm{ell}}(G)$.
+\begin{definition}
+    The \textit{dual elliptic nonabelian Fourier transform} is the involutive linear map $\FT^\vee_{\mathrm{ell}}:R_{\un,\mathrm{ell}}\rightarrow R_{\un,\mathrm{ell}}$ defined by
+    \begin{equation*}
+        \FT^\vee_{\mathrm{ell}}(\Pi(u,s,h))=\Pi(u,h,s),\quad u\in G^\vee\text{ unipotent, }(s,h)\in\Gamma_u\backslash\mathcal{Y}(\Gamma_u)_{\mathrm{ell}}.
+    \end{equation*}
+\end{definition}
+
+We are now ready to state the main conjecture for elliptic unipotent representations.
+
+\begin{conjecture}\cite{AubertCiubotaruRomano2024}*{Conjecture 1.2}
+    Let $G$ be a split semisimple $p$-adic group of simply connected type. There is a commutative diagram, up to certain roots of unity,
+    \[
+        \begin{tikzcd}
+        R_{\un,\text{ell}}(G) \arrow[r, "\FT^\vee_{\text{ell}}"] \arrow[d, "\res_{\un}^{\cpt}"] & R_{\un,\text{ell}}(G) \arrow[d, "\res_{\un}^{\cpt}"] \\
+        \bigoplus_{K\in\max(G)}R_{\un}(\overline{K}) \arrow[r, "\FT^{\cpt}_{\un}"] & \bigoplus_{K\in\max(G)}R_{\un}(\overline{K}),
+        \end{tikzcd}
+    \]
+    where $\FT^{\cpt}_{\un}:=\bigoplus_{K\in\max(G)}\FT^{\overline{K}}_{\un}$ on each coordinate.
+\end{conjecture}
+
+The horizontal maps in the above conjecture are easily computable. They are involutions on finite dimensional representation spaces with canonical basis, and computing the matrices is straightforward. The difficulty of the above conjecture relies on the computation of the unipotent parahoric restriction maps $\res^K_{\un}$. This is due to the fact that $R_{\un}(G)$ has a natural basis in terms of the geometry of the dual group $G^\vee$, while irreducible characters $R_{\un}(\overline{K})$ are parametrized by families and Lusztig's labels. The connection between these parametrizations is deep, and we devote the next section to discuss this in detail for Iwahori-spherical representations. At the end we also give a brief discussion on the computation of this map for non-Iwahori-spherical representations. We closely follow Reeder's discussion in \cite{Reeder2000}*{\S8,9}.

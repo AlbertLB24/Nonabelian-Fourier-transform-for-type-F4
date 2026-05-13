@@ -1,0 +1,143 @@
+The overarching aim of the Local Langlands Correspondence (LLC) is to classify the smooth admissible complex representations of reductive $p$-adic groups in terms of (hopefully simpler) geometric and number theoretic data. More concretely, if $G$ is a reductive $p$-adic group over some non-archimedean field $F$, the Langlands philosophy predicts that the (smooth admissible) complex representations should be controlled by the Weil group $\mathcal{W}_F$ of the field $F$, together with the geometry of the complex dual group $G^\vee$ of $G$. In this paper, we assume throughout that $G$ is a simple, split $p$-adic group of simply connected type. Our main results assume, in addition, that $G$ is of exceptional type, but this is not relevant for the purposes of this introduction. Under these assumptions, $G$ is uniquely determined by the $p$-adic field $F$ and the type of the underlying root system of $G$. Moreover, the dual group $G^\vee$ is a simple complex group of adjoint type. In this setting, LLC predicts the existence of a bijection between 
+
+\begin{align*}
+    \mathrm{LLC}:\left\{
+    \begin{array}{c}
+        \text{Irreducible smooth} \\
+        \text{admissible complex} \\
+        \text{reps of } G(F)
+    \end{array}
+    \right\}
+    &\twoheadrightarrow
+    \left\{
+    \begin{array}{c}
+        \text{Langlands parameters}\\
+        \varphi: \mathcal{W}_F \times \SL_2(\CC) \to G^\vee(\CC)        
+    \end{array}
+    \right\},
+\end{align*}
+satisfying certain natural compatibility conditions, where the first set is taken up to isomorphism and the second one up to conjugation by $G^\vee(\CC)$. The fibres of this map are called $L$-packets and they are a central object of interest in the LLC. By including additional geometric data, it is possible to distinguish between distinct elements in an $L$-packet. This is achieved by refining Langlands parameters: in addition to the map $\varphi:\SL_2(\CC)\times \mathcal{W}_F \to G^\vee(\CC)$ one considers representations $\phi$ of the component group $A_\varphi$ of the centralizer $Z_{G^\vee}(\textrm{Im}(\varphi))$ of the image of $\varphi$ in $G^\vee$. These representations $\phi\in\Irr(A_\varphi)$ parametrize the distinct elements in the $L$-packet corresponding to $\varphi$.
+
+%where Langlands parameters $\varphi$ satisfy that $\varphi(w)$ is semisimple for all $w\in\mathcal{W}_F$ and $\varphi|_{\SL_2(\CC)}$ is a morphism of algebraic varieties. Fibres of the above map are called $L$-packets. It is possible to refine the above map in order to obtain a bijection, but to do this one needs to introduce 
+
+Over the past few decades, the local Langlands correspondence has sparked remarkable interest, precise conjectures have been stated and many important results are now known. While the arithmetic of $F$ is important to classify all representation of the $p$-adic group $G$ (visible through the Weil group $\mathcal{W}_F$), the geometry of the complex dual group $G^\vee$ is enough to classify the class of \textit{unipotent representations} of $G$. To define this class of representations, one considers first unramified Langlands parameters trivial on the inertia subgroup $\mathcal{I}_F$ of the field $F$. By the Jacobson--Morozov theorem, unramified Langlands parameters $\varphi$ are determined, up to the action of $G^\vee$, by the commuting unipotent and semisimple elements $u:=\varphi(1,\left(\begin{smallmatrix}
+    1 & 1\\
+    0 & 1
+\end{smallmatrix}\right))$ and $s:=\varphi(\Frob,\Id)$. Moreover, the component group $A_{\varphi}$ becomes the component group $A_{us}$ of the centralizer $Z_{G^\vee}(us)$ in $G^\vee$. The set of unramified Langlands parameters up to $G^\vee$-conjugation is therefore in bijection with the set $\{(x,\phi),x\in G^\vee,\phi\in\widehat{A_x}\}$ up to $G^\vee$-conjugation. The set of unipotent representations of $G$, denoted by $\Irr_{\un}(G)$, fit in the commutative diagram 
+
+\begin{figure}[ht!]
+    \begin{displaymath}
+        \begin{tikzcd}[column sep=5em, row sep=4em]
+        % Top Left Node
+        \left\{ \begin{array}{c} 
+            \text{Unipotent} \\ 
+            \text{representations of } G 
+        \end{array} \right\} _{\text{/}\cong}
+        \arrow[r, "\cong"] 
+        \arrow[d, hook] 
+        &
+        % Top Right Node
+        \left\{ (x, \phi) : x \in G^\vee, \phi \in \text{Irr}(A_x) \right\}_{\text{/}G^\vee}
+        \arrow[d, hook] 
+        \\
+        % Bottom Left Node
+        \left\{ \begin{array}{c} 
+            \text{Irreducible smooth} \\ 
+            \text{admissible complex} \\ 
+            \text{reps of } G(F) 
+        \end{array} \right\} _{\text{/}\cong}
+        \arrow[r, "\cong"] 
+        & 
+        % Bottom Right Node
+        \left\{ \begin{array}{c} 
+            \text{Pairs }(\varphi,\phi): \\ 
+            \varphi : \mathrm{SL}_2(\mathbb{C}) \times \mathcal{W}_F \to G^\vee(\mathbb{C})\\
+            \text{and } \phi\in\Irr(A_\varphi)
+        \end{array} \right\}_{\text{/}G^\vee}
+        \end{tikzcd}
+    \end{displaymath}
+    \caption{Langlands parametrization of unipotent representations of $G$.}
+    \label{fig:unipotent_reps}
+\end{figure}
+\newpage
+
+We denote by $\pi(x,\phi)$ the unipotent representation corresponding to the Langlands parameter $(x,\phi)$.
+The class of unipotent representations contains all representations containing a vector fixed by an Iwahori subgroup of $G$ (usually denoted \textit{Iwahori-spherical} representations). This was first realized by the work of Kazhdan and Lusztig in \cite{KazhdanLusztig1987}, where they classified Iwahori-spherical representations in terms of geometric data related $G^\vee$. They proved that it was possible to associate, to each Iwahori-spherical representation, a unique pair $(x,\phi)$ up to $G^\vee$-conjugacy. This association is generally not surjective; however, each representation $\pi(x,\mathbf{1}),x\in G^\vee$ is Iwahori-spherical. Consequently, unipotent representations are the union of all $L$-packets containing some Iwahori-spherical representation.
+
+Lusztig's subsequent work showed that Deligne--Lusztig theory can be used to define unipotent representations of $G$ explicitly in terms of the $p$-adic topology and structure of $G$ alone. We devote Section \ref{sec:finite_groups} to discuss this construction in some detail. The Langlands parametrization of unipotent representations of $G$ as defined by Lusztig in terms of geometric data (see Figure \ref{fig:unipotent_reps}) has come from many years of development. Lusztig's work \cite{Lusztig1995}, \cite{Lusztig2002} settled it for adjoint $p$-adic groups, Reeder \cite{Reeder2002} for Iwahori-spherical representations of split groups of arbitrary isogeny, and Solleveld for all reductive $p$-adic groups \cite{Solleveld2023},\cite{Solleveld2023b}.
+
+\iffalse
+Firstly, one associates the \textit{Bruhat--Tits building} $\mathcal{B}(G)$ to the $p$-adic group $G$, a simplicial complex admitting a canonical action by $G$. This action beautifully captures many structural properties of the $p$-adic group and can be studied to understand representation theoretic aspects of $G$. \textcolor{red}{Maybe should talk briefly about this in some section}. Lusztig's main idea exploited the fact that associated to each facet $c$ of the building, there is a filtration of open compact subgroups (first defined by Moy and Prasad in \cite{MoyPrasad1994}). The first terms of these filtrations $K_c$ are called \textit{parahoric} subgroups and the second terms are their pro-$p$ unipotent radical $U_c$. Then, for any representation $V$ of $G$, the space $V^{U_c}$ is naturally a (potentially zero) representation over $\overline{K}_c:=K_c/U_c$,
+a \textit{finite group of Lie type}. If the space $V^{U_c}$ is non-zero for some $c$, we say that $V$ is a depth-zero representation of $G$. Under the LLC, depth-zero representations correspond to tamely ramified Langlands parameters (that is, trivial on wild inertia).
+
+Unipotent representations thus are a proper subset of depth-zero representations. To define them, one needs to have a good understanding of the representation theory finite groups of Lie type. In Deligne and Lusztig's groundbreaking paper \cite{DeligneLusztig1976}, deep geometric methods were used to construct characters for finite groups of Lie type. As a result of this geometric approach, a family of characters with remarkable properties arose naturally. Characters in this family were called \textit{unipotent}. \textcolor{red}{should reference this later}. A representation of the $p$-adic group is therefore defined to be unipotent if there is some facet $c$ for which the corresponding $\overline{K}_c$-representation contains some unipotent character. This certainly includes Iwahori-spherical representations, for the quotient with its pro-unipotent radical is just a torus over a finite field, and the trivial character is unipotent (in fact, the only unipotent character). The study of unipotent representations of $p$-adic groups is therefore deeply connected to the study of unipotent characters for finite groups of Lie type. The top bijection of the diagram \textcolor{red}{reference the commutative diagram} was proven by Lusztig in \cite{Lusztig1995} as a culmination of decades of work.\fi
+
+While many questions in the unipotent LLC have now been resolved in full generality, some of them remain open. One such question relates to the stability of $L$-packets. Moeglin and Waldspurger tackled this problem for $G=\SO_{2n+1}(F)$ in \cite{MoglinWaldspurger2003} by considering the restriction of unipotent representations to maximal open compact subgroups. These subgroups provide a passage from unipotent representations of the $p$-adic group to unipotent representations of certain finite reductive groups. Work of Lusztig and others in the late 20th century revealed remarkable structure on unipotent characters of these finite reductive groups, which Moeglin and Waldspurger exploited. Lusztig defined an involution on the space of virtual unipotent characters known as \textit{Lusztig's non-abelian transform} taking the irreducible characters to the so-called \textit{almost characters}. These characters can be obtained independently via the theory of character sheaves and, as a result, have nice geometrical and stability properties. 
+
+The hope is that, if we can lift the Fourier transform to the setting of $p$-adic groups with analogous properties, one could use the resulting virtual characters to prove stability properties of $L$-packets. Moreover, it is believed by Lusztig that an analogous theory of character sheaves for $p$-adic groups should exist. Work of Ciubotaru \cite{Ciubotaru2020} and Aubert--Ciubotaru--Romano \cite{AubertCiubotaruRomano2024} has already considered this problem and formulated precise conjectures. We consider the same setting and similar notation to \cite{AubertCiubotaruRomano2024}, which we now describe in the simplified setting when $G$ is of simply connected type. Let $\max(G)$ denote the set of conjugacy classes of maximal open compact subgroups of $G$, which coincides with the set of conjugacy classes of maximal parahoric subgroups. Each $K\in\max(G)$ has a pro-$p$ unipotent radical $U_K$ with reductive quotient $\overline{K}$. When $G$ is simply connected, $\overline{K}$ is a connected finite group of Lie type. The \textit{unipotent parahoric restriction map} is the linear transformation
+\begin{align*}
+    \res_{\un}^{K}:R_{\un}(G)&\longrightarrow R_{\un}(\overline{K})\\
+    V&\longmapsto V^{U_K},
+\end{align*}
+where $R_{\un}(G)$ and $R_{\un}(\overline{K})$ are the complexification of the Grothendieck groups spanned by the unipotent representations of $G$ and $\overline{K}$, respectively. Secondly, Lusztig's nonabelian Fourier transforms on $R_{\un}(\overline{K})$ for each $K\in\max(G)$ give an involution 
+\begin{equation*}
+    \FT^{\cpt}_{\un}:\bigoplus_{K\in\max(G)}R_{\un}(\overline{K})\longrightarrow\bigoplus_{K\in\max(G)}R_{\un}(\overline{K}).
+\end{equation*}
+
+The remaining ingredient to formally state Aubert--Ciubotaru--Romano's conjecture \cite{AubertCiubotaruRomano2024}*{Conjecture 1.2} is the construction of the \textit{dual nonabelian Fourier transform} $\FT^\vee:R_{\un}(G)\longrightarrow R_{\un}(G)$ compatible with the unipotent restriction maps $\res_{\un}^K$ and Lusztig's nonabelian Fourier transform $\FT^{\overline{K}}$. The existence of such a map is conjectured, but so far no explicit general construction has been achieved on the infinite dimensional space $R_{\un}(G)$. Instead, Ciubotaru--Opdam \cite{CiubotaruOpdam2010} realized that, for applications, it was often sufficient to study the space quotient space $\overline{R}_{\un}(G)$ of $R_{\un}(G)$ by the span of all properly parabolically induced representations, since parabolic induction is generally well understood. The upshot of this simplification is double: firstly, the quotient space $\overline{R}_{\un}(G)$ is finite dimensional, in contrast to the infinite dimensional space $R_{\un}(G)$. Secondly, $\overline{R}_{\un}(G)$ is canonically isomorphic to the elliptic unipotent representation space $R_{\un,\mathrm{ell}}(G)$, a certain subspace of $R_{\un}(G)$. Moreover, the Local Langlands correspondence provides an explicit description for a natural orthogonal basis of $R_{\un,\mathrm{ell}}(G)$. To describe this basis, let $u\in G^\vee$ be a unipotent element and let $\Gamma_u$ be the reductive part of the centralizer $Z_{G^\vee}(u)$. We then consider the set of elliptic pairs $$\mathcal{Y}(\Gamma_u)_{\mathrm{ell}}=\{(s,h)\in\Gamma_u\ |\ sh=hs\text{ and }Z_{\Gamma_u}(s,h)\text{ finite}\}.$$
+The Local Langlands correspondence induces an isomorphism
+\begin{equation*}
+    \mathrm{LLC}^{\mathrm{ell}}_{\un}:\bigoplus_{u\in G^\vee}\CC[\mathcal{Y}(\Gamma_u)]^{\Gamma_u}\longrightarrow R_{\un,\mathrm{ell}}(G),\quad\quad (u,s)\longmapsto\Pi(u,s,h),
+\end{equation*}
+where the sum in the left hand side is taken over conjugacy classes of unipotent elements in $G^\vee$ and the virtual characters are defined by 
+$$\Pi(u,s,h):=\sum_{\phi\in A_{us}}\phi(h)\pi(us,\phi).$$
+The space of elliptic pairs has an obvious involution given by the flip $(s,h)\mapsto(h,s)$, and this defines an involution 
+$$\FT^\vee_{\mathrm{ell}}:R_{\un,\mathrm{ell}}(G)\longrightarrow R_{\un,\mathrm{ell}}(G),$$
+the dual elliptic nonabelian Fourier transform. We are finally ready to state the main conjecture of this paper, in the simplified setting of split, simply connected $p$-adic groups.
+\begin{conjecture}\label{conj:main}\cite{AubertCiubotaruRomano2024}*{Conjecture 1.2}
+    Let $G$ be a split semisimple $p$-adic group of simply connected type. Then the diagram 
+    \[
+        \begin{tikzcd}
+        R_{\un,\text{ell}}(G) \arrow[r, "\FT^\vee_{\text{ell}}"] \arrow[d, "\res_{\un}^{\cpt}"] & R_{\un,\text{ell}}(G) \arrow[d, "\res_{\un}^{\cpt}"] \\
+        \bigoplus_{K\in\max(G)}R_{\un}(\overline{K}) \arrow[r, "\FT^{\cpt}_{\un}"] & \bigoplus_{K\in\max(G)}R_{\un}(\overline{K}),
+        \end{tikzcd}
+    \]
+    commutes, up to certain roots of unity.
+\end{conjecture}
+
+In their paper, Aubert, Ciubotaru and Romano showed that this conjecture holds for $G=\SL_n(F)$,  $\PGL_n(F)$ or $\Sp_4(F)$. In previous work, Ciubotaru and Opdam \cite{Ciubotaru2020} showed it holds for $G_2(F)$, and Waldspurger \cite{Waldspurger2018} showed it for $G=\SO_{2n+1}(F)$. In this document we settle the above conjecture for two further exceptional cases. 
+
+\iffalse
+For a $p$-adic group $G$, let $\InnT^p(G)$ be the set of pure inner twists of $G$, a set in canonical bijection with $Z(G^\vee)$. Note that if $G$ is simply connected, it has no pure inner twists other than itself. For $G'\in\InnT^p(G')$ let $R_{\un}(G')$ be the complexification of the Grothendiek space spanned by $\Irr_{\un}(G')$ and consider the representation space $\oplus_{G'}R_{\un}(G)$ associated to $G$. In order to relate this space with the representation theory of finite groups of Lie type, we use open compact subgroups of $G'$. One of the main innovations in \cite{AubertCiubotaruRomano2024} was the realization that instead of considering maximal parahoric subgroups, we should instead consider maximal open compact subgroups. The distinction is that while reductive quotients of maximal parahoric subgroups are connected, this need not be the case for maximal open compact subgroups. The two notions coincide when $G$ is simply connected, but not otherwise. By taking fixed points under the pro-unipotent radical of each maximal open compact subgroup, we obtain the restriction map 
+\begin{equation*}
+    \res_{\un}^{\cpt}:\bigoplus_{G'\in\InnT^p} R_{\un}(G')\longrightarrow\mathcal{C}(G)_{\cpt,\un},\quad\text{where}\quad\mathcal{C}(G)_{\cpt,\un}=\bigoplus_{G'\in\InnT^p(G)}\bigoplus_{K'\in\max(G')}R_{\un}(\overline{K}'),
+\end{equation*}
+$\max(G')$ is the set of maximal open compact subgroups of $G'$ up to conjugacy and $R_{\un}(\overline{K}')$ is the $\CC$-span of the irreducible characters of $\overline{K}'$. This innovation unavoidably led to a second one. Lusztig's non-abelian Fourier transform was defined only for connected finite groups of Lie type, and in \cite{AubertCiubotaruRomano2024}*{\S6} a generalization of this map was defined for disconnected groups, denoted by 
+\begin{equation*}
+    \FT^{\cpt}_{\un}:\mathcal{C}(G)_{\cpt,\un}\longrightarrow\mathcal{C}(G)_{\cpt,\un}.
+\end{equation*}
+
+
+In this document, we shall only consider simply connected $p$-adic groups, in which case we recover the classical case of maximal parahoric subgroups and Lusztig's nonabelian Fourier transform. The remaining ingredient to state the conjecture is, of course, the definition of the \textit{dual nonabelian Fourier transform} on the space $\oplus_{G'}R_{\un}(G')$ compatible with the restriction maps and the generalization of Lusztig's nonabelian Fourier transform $\FT_{\un}^{\cpt}$. The existence of such a map is conjectured, but no construction has been achieved on the entire space. Instead, previous work has focused on a certain subspace, (isometric to) the elliptic unipotent representation space $\mathcal{R}_{\un,\mathrm{ell}}^p(G)$ spanned by certain virtual characters $\Pi(u,s,h)$, where $u\in G^\vee$ and $(s,h)$ are \textit{elliptic pairs} defined by section \ref{subsec:dualFourier}. On this space, there is a natural definition for the dual nonabelian Fourier transform, namely
+\begin{equation*}
+    \FT^\vee_{\mathrm{ell}}:\mathcal{R}_{\un,\mathrm{ell}}^p(G)\longrightarrow\mathcal{R}_{\un,\mathrm{ell}}^p(G),\quad\Pi(u,s,h)\longmapsto\Pi(u,h,s).
+\end{equation*}
+\fi
+
+
+%\begin{theorem}[In progress, Theorem \ref{thm:Cn_subregular}] Let $G=\Sp_{2n}(F)$ and let $u$ be a subregular element of $G^\vee=\SO_{2n+1}(\CC)$. Then for all elliptic pairs $(s,h)$ related to $u$, $$\FT^{\cpt}_{\un}(\res_{\un}^{\cpt}(\Pi(u,s,h)))=\res_{\un}^{\cpt}(\Pi(u,h,s)).$$ \end{theorem}
+
+\begin{theorem} Let $G$ be a simple, simply connected $p$-adic group of type $F_4$ or $E_6$. Then conjecture \ref{conj:main} holds for $G$.    
+\end{theorem}
+
+\subsection*{Structure of the document}
+The document is organized as follows. We devote section $2$ to introduce finite groups of Lie type $G^F$ and Deligne--Lusztig theory. There is a vast amount of theory, so we focus on understanding the classification of unipotent characters of $G^F$ in terms of families. This naturally leads to the construction of Lusztig's nonabelian Fourier transform. In section $3$ we explain relevant structural and representation theoretic results of reductive $p$-adic groups $G$, where we introduce the Bruhat-Tits building, unipotent representations and the dual nonabelian Fourier transform. Section $4$ is the most technical; there we discuss in detail how to explicitly compute the restriction functors $\res_{\un}^{\cpt}$, a method developed by Reeder in \cite{Reeder2000}. Sections $5$ and $6$ contain original work and prove \textcolor{red}{rewrite this bit}.
+
+
+
+\iffalse
+This class is commonly referred to as \textit{unipotent representations} of $G$ and denoted by $\Irr_{\un}(G)$. In particular, it contains all representations containing a vector fixed by an Iwahori subgroup (usually denoted \textit{Iwahori-spherical} representations). The work of Kazhdan and Lusztig in \cite{KazhdanLusztig1987} first classified Iwahori-spherical representations in terms of geometric data related to $G^\vee$; however this classification ``missed'' to capture some important information. A few years later, Lusztig remedied this gap by defining the larger set of unipotent representations and considering simultaneously all such representations for all pure inner twists of $G$. Explicitly, in \cite{Lusztig1995} he proved that there is a natural bijection between the sets
+\begin{equation}\label{eqn:LLC_unipotent}
+    \LLC^p:\bigsqcup_{G'}\Irr_{\un}(G')\longleftrightarrow G^\vee\backslash\{(x,\phi)\ |\ x\in G^\vee, \phi\in\widehat{A_x}\},
+\end{equation}
+where the union on the left is taken over all pure inner twists $G'$ of $G$ and $A_x$ is the component group of the centralizer $Z_{G^\vee}(x)$. The elements of the $L$-packets are then parametrized by the representations $\phi\in\widehat{A_x}$.\fi
